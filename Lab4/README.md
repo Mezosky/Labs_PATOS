@@ -13,3 +13,12 @@
 - Password del servidor: HADcc5212$oop
 - Enviar archivos a LFS: scp -P 220 local-path {archivo a enviar} uhadoop@cm.dcc.uchile.cl:/data/2021/uhadoop/grupo34/
 - Run pig apache: pig costar-count.pig o pig -x local
+
+## To-Do
+
+- [x] Filtrar por THEATRICAL_MOVIE.
+- [x] Filtrar por mejores peliculas.
+- [x] Split actores en actores masculinos y femeninos.
+- [x] Contar actores/actrices que aparecieron en las mejores peliculas.
+- [x] Ordenar de mayor a menor el conteo de los actores/actrices.
+- [ ] Realizar el Store de los jobs.
