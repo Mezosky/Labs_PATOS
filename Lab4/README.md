@@ -1,5 +1,7 @@
 # Laboratorio 4: Apache Pig
 
+![Pig Apache](https://miro.medium.com/max/1838/1*v1dRCjcQMoXDOpsWD79CQA.png)
+
 ## Objetivos
 
 - The main goal of the lab is to identify the best actors/actresses in IMDb, which we will define as those who
