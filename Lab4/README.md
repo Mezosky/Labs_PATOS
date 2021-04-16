@@ -6,6 +6,8 @@
 
 - El objetivo principal del laboratorio es identificar los mejores actores/actrices en el dataset de IMDb, los cuales serán definidos como los actores que aparecen en las mejores películas.
 
+- Para esto se debe codificar el script `top-stars.pig`, quien deberá ejecutar el objetivo señalado.
+
 ## Codigos utiles
 - ssh -p 220 uhadoop@cm.dcc.uchile.cl
 - Password del servidor: HADcc5212$oop
