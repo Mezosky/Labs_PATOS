@@ -11,5 +11,5 @@
 ## Codigos utiles
 - ssh -p 220 uhadoop@cm.dcc.uchile.cl
 - Password del servidor: HADcc5212$oop
-- Enviar archivos a LFS: scp -P 220 local-path D:/pandicosas/Codes/Eclipe_projects/Lab3/mdp-hadoop/dist/mdp-hadoop.jar uhadoop@cm.dcc.uchile.cl:/data/2021/uhadoop/grupo34/
+- Enviar archivos a LFS: scp -P 220 local-path {archivo a enviar} uhadoop@cm.dcc.uchile.cl:/data/2021/uhadoop/grupo34/
 - Run pig apache: pig costar-count.pig o pig -x local

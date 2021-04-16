@@ -40,15 +40,15 @@ raw_ratings = LOAD 'hdfs://cm:9000/uhadoop/shared/imdb/imdb-ratings-test.tsv' US
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
 
--- Filtramos por Theatrical Movie cada uno de los dataset
+-- Filtramos por Theatrical Movie cada uno de los dataset.
 -- (Duda: Es mas eficiente filtrar o trabajar con los datos de actores sin filtrar?)
 raw_roles_f = FILTER raw_roles BY type == 'THEATRICAL_MOVIE';
 good_movies = FILTER raw_ratings BY ((votes >= 10001) AND (score >= 7.8) AND (type == 'THEATRICAL_MOVIE'));
 
--- Split para generar actors y actresses
+-- Split para generar actors y actresses por separado.
 SPLIT raw_roles_f INTO actors IF gender=='MALE', actresses IF gender=='FEMALE';
 
--- Generar la key para realizar la concatenación
+-- Generar la key para realizar la concatenación entre los actores y el dataset de peliculas.
 actors_join = FOREACH actors GENERATE CONCAT(title,'##',year,'##',num) AS key, star;
 actresses_join = FOREACH actresses GENERATE CONCAT(title,'##',year,'##',num) AS key, star;
 good_movies_join = FOREACH good_movies GENERATE CONCAT(title,'##',year,'##',num) AS key;
@@ -57,21 +57,36 @@ good_movies_join = FOREACH good_movies GENERATE CONCAT(title,'##',year,'##',num)
 best_actors = JOIN actors_join BY key LEFT OUTER, good_movies_join BY key;
 best_actresses = JOIN actresses_join BY key LEFT OUTER, good_movies_join BY key;
 
---
-best_actors_test = FOREACH best_actors GENERATE star, (
+-- Al realizar el JOIN LEFT OUTER se generaran valores nules, que representaran peliculas 
+-- "no tan buenas" en las que participaron los actores. Por esto, es anexado un 0 si son
+-- nulos o un 1 en cualquier otro caso.
+
+best_actors_count = FOREACH best_actors GENERATE star, (
 	CASE
 		WHEN $2 is null THEN 0
 		ELSE 1
 	END
 ) AS count;
 
-best_actresses_test = FOREACH best_actresses GENERATE star, (
+best_actresses_count = FOREACH best_actresses GENERATE star, (
 	CASE
 		WHEN $2 is null THEN 0
 		ELSE 1
 	END
 ) AS count;
 
---
-test1 = GROUP best_actors_test by star;
-test2 = FOREACH test1 GENERATE $0 AS star, SUM(best_actors_test.count) as h;
+-- Sumamos todos los valores para los actores/actrices.
+best_actors_group = GROUP best_actors_count by star;
+best_actors_total = FOREACH best_actors_group GENERATE $0 AS star, SUM(best_actors_count.count) as count;
+
+best_actresses_group = GROUP best_actresses_count by star;
+best_actresses_total = FOREACH best_actresses_group GENERATE $0 AS star, SUM(best_actresses_count.count) as count;
+
+-- Reordenamos de mayor a menor los actores/actrices.
+best_actors_sorted = ORDER best_actors_total BY count DESC, star ASC;
+best_actresses_sorted = ORDER best_actresses_total BY count DESC, star ASC;
+
+-- Generamos los archivos de salida
+STORE best_actors_sorted INTO '/uhadoop2021/grupo34/imdb-costars/';
+STORE best_actresses_sorted INTO '/uhadoop2021/grupo34/imdb-costars/';
+
