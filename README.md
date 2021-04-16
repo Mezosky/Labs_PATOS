@@ -1,2 +1,2 @@
-# Labs_PATOS
+# Laboratorio de PATOS
 Desarrollo de los laboratorios de PATOS.
