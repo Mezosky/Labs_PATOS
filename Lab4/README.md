@@ -20,7 +20,11 @@
 
 - Run pig apache: 
         
-        pig /data/2021/uhadoop/grupo34/top-stars.pig o pig -x local
+        pig /data/2021/uhadoop/grupo34/top-stars.pig 
+        
+        ó
+
+        pig -x local
 
 - Cargar archivos ejecutados 
 
