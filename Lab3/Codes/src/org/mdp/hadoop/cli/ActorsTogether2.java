@@ -85,7 +85,7 @@ public class ActorsTogether2 {
 			// Aplicamos condicional para filtrar por el tipo.
 			if (TM.equals(type_movie)){
 				
-				// Creamos la llave en base a la combinación que hace unica
+				// Creamos la llave en base a la combinaciï¿½n que hace unica
 				// a una pelicula y guardamos los nombres de los actores.
 				String unique_key = rows[1]+"##"+rows[2]+"##"+rows[3];
 				String star_name = rows[0];
@@ -143,7 +143,7 @@ public class ActorsTogether2 {
 			for(Text value:values) {
 				actors.add(value.toString());
 			}
-			// Este no debería ser necesario pero nos dimos cuenta que habian
+			// Este no deberï¿½a ser necesario pero nos dimos cuenta que habian
 			// nombres que no estaban bien ordenados, un ejemplo es el apellido
 			// "acosta".
 			Collections.sort(actors);
@@ -153,7 +153,7 @@ public class ActorsTogether2 {
 			for(int it1=0; it1 < actors.size(); it1++) {
 				for(int it2=it1+1; it2< actors.size(); it2++) {
 					
-					// Generamos la combinación solicitada para escribir en el archivo
+					// Generamos la combinaciï¿½n solicitada para escribir en el archivo
 					Text actorsTogether = new Text(actors.get(it1)+"##"+actors.get(it2));
 					
 					// Notar que "one" no tiene un util, solo nos importa actorsTogether
