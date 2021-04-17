@@ -16,7 +16,7 @@
 - [x] Contar actores/actrices que aparecieron en las mejores peliculas.
 - [x] Ordenar de mayor a menor el conteo de los actores/actrices.
 - [X] Realizar el Store de los jobs (separado por genero).
-- [ ] Revisar tareas anteriores.
+- [ ] **Revisar** tareas anteriores.
 
 ## Entregables
 
@@ -64,6 +64,7 @@
 - ¿Quieres remover carpetas creadas?
 
         hdfs dfs -rmr /uhadoop2021/grupo34/best_actors/
+        
         hdfs dfs -rmr /uhadoop2021/grupo34/best_actresses/
 
 ## Resultados
