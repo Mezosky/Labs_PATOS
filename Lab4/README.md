@@ -9,10 +9,28 @@
 - Para esto se debe codificar el script `top-stars.pig`, quien deberá ejecutar el objetivo señalado.
 
 ## Codigos utiles
-- ssh -p 220 uhadoop@cm.dcc.uchile.cl
+- Conectar a servidor:
+        
+        ssh -p 220 uhadoop@cm.dcc.uchile.cl
+
 - Password del servidor: HADcc5212$oop
-- Enviar archivos a LFS: scp -P 220 local-path {archivo a enviar} uhadoop@cm.dcc.uchile.cl:/data/2021/uhadoop/grupo34/
-- Run pig apache: pig costar-count.pig o pig -x local
+- Enviar archivos a LFS: 
+
+        scp -P 220 local-path D:/pandicosas/Codes/Eclipe_projects/Labs_PATOS/Lab4/Codes/top-stars.pig uhadoop@cm.dcc.uchile.cl:/data/2021/uhadoop/grupo34/
+
+- Run pig apache: 
+        
+        pig /data/2021/uhadoop/grupo34/top-stars.pig o pig -x local
+
+- Cargar archivos ejecutados 
+
+        hdfs dfs -cat /uhadoop2021/grupo34/best_actors/part-r-00000 
+        hdfs dfs -cat /uhadoop2021/grupo34/best_actresses/part-r-00000 
+
+- ¿Quieres remover carpetas creadas?
+
+        hdfs dfs -rmr /uhadoop2021/grupo34/best_actors/
+        hdfs dfs -rmr /uhadoop2021/grupo34/best_actresses/
 
 ## To-Do
 

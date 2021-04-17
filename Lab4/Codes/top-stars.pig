@@ -1,10 +1,10 @@
 -- This script finds the actors/actresses with the highest number of good movies
 
-raw_roles = LOAD 'hdfs://cm:9000/uhadoop/shared/imdb/imdb-stars-test.tsv' USING PigStorage('\t') AS (star, title, year, num, type, episode, billing, char, gender);
+raw_roles = LOAD 'hdfs://cm:9000/uhadoop/shared/imdb/imdb-stars.tsv' USING PigStorage('\t') AS (star, title, year, num, type, episode, billing, char, gender);
 -- Later you can change the above file to 'hdfs://cm:9000/uhadoop/shared/imdb/imdb-stars.tsv' to see the full output
 
 
-raw_ratings = LOAD 'hdfs://cm:9000/uhadoop/shared/imdb/imdb-ratings-test.tsv' USING PigStorage('\t') AS (dist, votes, score, title, year, num, type, episode);
+raw_ratings = LOAD 'hdfs://cm:9000/uhadoop/shared/imdb/imdb-ratings.tsv' USING PigStorage('\t') AS (dist, votes, score, title, year, num, type, episode);
 -- Later you can change the above file to 'hdfs://cm:9000/uhadoop/shared/imdb/imdb-ratings.tsv' to see the full output
 
 --------------------------------------------------------------------------------------
