@@ -47,7 +47,7 @@ good_movies = FILTER raw_ratings BY ((votes >= 10001) AND (score >= 7.8) AND (ty
 
 -- Split para generar actors y actresses por separado.
 SPLIT raw_roles_f INTO actors IF gender=='MALE', actresses IF gender=='FEMALE';
-
+	
 -- Generar la key para realizar la concatenación entre los actores y el dataset de peliculas.
 actors_join = FOREACH actors GENERATE CONCAT(title,'##',year,'##',num) AS key, star;
 actresses_join = FOREACH actresses GENERATE CONCAT(title,'##',year,'##',num) AS key, star;
@@ -87,6 +87,6 @@ best_actors_sorted = ORDER best_actors_total BY count DESC, star ASC;
 best_actresses_sorted = ORDER best_actresses_total BY count DESC, star ASC;
 
 -- Generamos los archivos de salida
-STORE best_actors_sorted INTO '/uhadoop2021/grupo34/imdb-costars/';
-STORE best_actresses_sorted INTO '/uhadoop2021/grupo34/imdb-costars/';
+STORE best_actors_sorted INTO '/uhadoop2021/grupo34/best_actors/';
+STORE best_actresses_sorted INTO '/uhadoop2021/grupo34/best_actresses/';
 
