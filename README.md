@@ -1,6 +1,6 @@
 # Laboratorio de PATOS
 
-Aquí encontraras los desarrollos de los laboratorios de PATOS. Estos son realizados por Jose Espina y Ignacio Meza.
+Aquí encontraras los desarrollos de los laboratorios de PATOS. Estos son realizados por **Jose Espina** y **Ignacio Meza**.
 
 ## Indice de laboratorios
 
