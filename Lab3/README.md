@@ -46,3 +46,47 @@
 - ¿Como borro carpetas creadas?
         
         hdfs dfs -rmr /uhadoop2021/g34/imbd/
+
+## Resultados
+
+- The count for any word beginning with `s' in Spanish Wikipedia (from CountWords)
+
+| Word    | count |
+|---------|-------|
+| sabueso |  105  |
+
+- The counts of the top ten words by frequency in Spanish Wikipedia (from SortWordCounts)
+
+| Word | count   |
+|------|---------|
+|  de  | 4921380 |
+|  la  | 2285040 |
+|  en  | 2161907 |
+|  el  | 1854882 |
+|   y  | 1536938 |
+|   a  |  816958 |
+|  del |  793210 |
+|  es  |  785336 |
+|  que |  775087 |
+|  los |  727769 |
+
+- The counts of the top ten co-stars by frequency in IMDb
+
+|                   actors                   | count |
+|:------------------------------------------:|:-----:|
+| lyons, eddie (i) & moran, lee (i)          | 321   |
+| bhasi, adoor & nazir, prem                 | 299   |
+| fine, larry (i) & howard, moe (i)          | 243   |
+| flowers, bess & miller, harold (i)         | 227   |
+| mercer, jack & questel, mae                | 219   |
+| ali (i) & brahmanandam                     | 196   |
+| kerrigan, j. warren & richardson, jack (i) | 186   |
+| franey, billy & henry, gale                | 180   |
+| lester, louise (i) & richardson, jack (i)  | 179   |
+| brahmanandam & narayana, m.s.              | 178   |
+
+- The count of a pair of co-stars you're a huge fan of in IMDb
+
+|              actors             | count |
+|:-------------------------------:|:-----:|
+| dicaprio, leonardo & pitt, brad | 3     |
