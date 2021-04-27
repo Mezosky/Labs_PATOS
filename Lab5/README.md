@@ -8,6 +8,9 @@
 
 > ```The Wire#2002        -30- (#5.10)|Final Grades (#4.13)|  Middle Ground (#3.11)        9.6        8.835```
 
+<p align="center">
+  <img src="https://thumbs.gfycat.com/ThinObviousAmericanbittern-max-1mb.gif">
+</p>
 
 ## Entregables
 

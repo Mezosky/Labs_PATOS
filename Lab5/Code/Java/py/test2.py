@@ -41,7 +41,7 @@ if __name__ == "__main__":
     # Juntar episodios con mejor rating en una misma string
     episodes_together = episodes_together.map(lambda tup: (tup[0], tup[1]))
     episodes_together = episodes_together.aggregateByKey((''), \
-        lambda sumString, tupla: (sumString + '|' + tupla), \
+        lambda sumString, tupla: (sumString + tupla if sumString=='' else sumString + '|' + tupla), \
         lambda sumCountA, sumCountB: (sumCountA + sumCountB))
 
     # Cartesian de average con max
