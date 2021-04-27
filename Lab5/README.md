@@ -8,9 +8,11 @@
 
 - [Objetivos](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Objetivos)
 - [Entregables](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#entregables)
+- [Aclaración](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Aclaración)
 - [Codigos Utiles](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Codigos-Utiles)
 - [Resultados](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Resultados)
 - [Otros](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Otros)
+
 
 ## Objetivos 
 [Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Indice)
