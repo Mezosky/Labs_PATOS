@@ -31,12 +31,13 @@
 - La tupla de salida para la seria ”The Simpsons#1989” y otro resultado a nuestra elección.
 
 ## Aclaración
+[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Indice)
 
 Esta tarea fue realizada en ```python``` y los códigos que ejecutan la tarea solicitada son:
 
-> entrega1.py 
+> [`entrega1.py`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab5/Code/Java/py/intentoJose2.py)
 
-> entrega2.py
+> [`entrega2.py`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab5/Code/Java/py/test2.py)
 
 ## Códigos Utiles
 [Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Indice)
