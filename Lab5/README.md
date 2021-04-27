@@ -14,7 +14,7 @@
 - Subir la clase o programa InfoSeriesRating (Escrita en Java o Python). 
 - La tupla de salida para la seria ”The Simpsons#1989” y otro resultado a nuestra elección.
 
-# Codigos Utiles
+## Codigos Utiles
 
 - Entrar al servidor SSH:
 
