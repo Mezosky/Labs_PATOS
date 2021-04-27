@@ -4,6 +4,14 @@
 <img src="https://www.josebernalte.com/wp-content/uploads/2018/02/spark.png" alt="apacheSpark" height="250">
 </p>
 
+## Indice
+
+- [Objetivos](##Objetivos)
+- [Entregables](##Entregables)
+- [Codigos Utiles](##Codigos-Utiles)
+- [Resultados](##Resultados)
+- [Otros](##Otros)
+
 ## Objetivos
 
 - Se deberá generar un archivo con las siguientes caracteristicas:
@@ -98,7 +106,7 @@
 
 > (u'Twin Peaks#1990', u'(#2.7)', 9.4, 8.52)
 
-## Otro
+## Otros
 
 - Script para buscar en todos los archivos:
 
