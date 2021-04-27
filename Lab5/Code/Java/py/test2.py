@@ -49,7 +49,7 @@ if __name__ == "__main__":
     avg_max_together = avg_max_together.filter(lambda line: (line[0][0]==line[1][0]))
     avg_max_together = avg_max_together.map(lambda line: (line[0][0], (line[0][1], line[1][1])))
 
-    #Join
+    #Join y map para obtener los resultados esperados
     episodes_together = episodes_together.join(avg_max_together)
     episodes_together = episodes_together.map(lambda line: (line[0], line[1][0], line[1][1][0], line[1][1][1]))
 

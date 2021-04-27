@@ -14,7 +14,7 @@
 - Subir la clase o programa InfoSeriesRating (Escrita en Java o Python). 
 - La tupla de salida para la seria ”The Simpsons#1989” y otro resultado a nuestra elección.
 
-# Codigos Utiles
+## Codigos Utiles
 
 - Entrar al servidor SSH:
 
@@ -59,7 +59,8 @@
 
         hdfs dfs -rmr /uhadoop2021/grupo34/test/
 
+- Me da flojera escribir a cada rato lo mismo, aquí tienes un script:
 
-hdfs dfs -rmr /uhadoop2021/grupo34/test/
-cd grupo34
-spark-submit --master spark://cluster-01:7077 test2.py hdfs://cm:9000/uhadoop/shared/imdb/imdb-ratings-test.tsv hdfs://cm:9000/uhadoop2021/grupo34/test
+                hdfs dfs -rmr /uhadoop2021/grupo34/test/
+                cd grupo34
+                spark-submit --master spark://cluster-01:7077 test2.py hdfs://cm:9000/uhadoop/shared/imdb/imdb-ratings-test.tsv hdfs://cm:9000/uhadoop2021/grupo34/test
