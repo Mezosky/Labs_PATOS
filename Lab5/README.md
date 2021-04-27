@@ -9,8 +9,8 @@
 - [Objetivos](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Objetivos)
 - [Entregables](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#entregables)
 - [Aclaración](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Aclaración)
-- [Codigos Utiles](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Codigos-Utiles)
 - [Resultados](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Resultados)
+- [Codigos Utiles](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Codigos-Utiles)
 - [Otros](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Otros)
 
 
@@ -40,6 +40,25 @@ Esta tarea fue realizada en ```python``` y los códigos que ejecutan la tarea so
 > [`entrega1.py`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab5/Code/Java/py/intentoJose2.py)
 
 > [`entrega2.py`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab5/Code/Java/py/test2.py)
+
+## Resultados
+[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Indice)
+
+- Busqueda de ```The Simpsons#1989``` entrega:
+
+<p align="center">
+  <img src="https://deadhomersociety.files.wordpress.com/2018/01/whochewed.gif">
+</p>
+
+> (u'The Simpsons#1989', u"Homer's Enemy (#8.23)", 9.2, 7.38)
+
+- Busqueda de ```Twin Peaks#1990``` entrega:
+
+<p align="center">
+  <img src="https://media1.giphy.com/media/3ohzdKjSSVObhesnFm/giphy.gif">
+</p>
+
+> (u'Twin Peaks#1990', u'(#2.7)', 9.4, 8.52)
 
 ## Códigos Utiles
 [Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Indice)
@@ -102,25 +121,6 @@ Esta tarea fue realizada en ```python``` y los códigos que ejecutan la tarea so
                 hdfs dfs -cat /uhadoop2021/grupo34/test/part-00016 | grep -e "^(u'The Simpsons#1989" | more
                 hdfs dfs -cat /uhadoop2021/grupo34/test/part-00035 | grep -e "^(u'Twin Peaks" | more
 
-
-## Resultados
-[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Indice)
-
-- Busqueda de ```The Simpsons#1989``` entrega:
-
-<p align="center">
-  <img src="https://deadhomersociety.files.wordpress.com/2018/01/whochewed.gif">
-</p>
-
-> (u'The Simpsons#1989', u"Homer's Enemy (#8.23)", 9.2, 7.38)
-
-- Busqueda de ```Twin Peaks#1990``` entrega:
-
-<p align="center">
-  <img src="https://media1.giphy.com/media/3ohzdKjSSVObhesnFm/giphy.gif">
-</p>
-
-> (u'Twin Peaks#1990', u'(#2.7)', 9.4, 8.52)
 
 ## Otros
 [Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Indice)
