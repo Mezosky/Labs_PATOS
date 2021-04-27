@@ -1,6 +1,8 @@
 # Laboratorio 5: Apache Spark
 
-![apacheSpark](https://www.josebernalte.com/wp-content/uploads/2018/02/spark.png)
+<p align="center">
+<img src="https://www.josebernalte.com/wp-content/uploads/2018/02/spark.png" alt="apacheSpark" height="150">
+</p>
 
 ## Objetivos
 
