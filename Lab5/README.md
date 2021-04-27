@@ -12,7 +12,8 @@
 - [Resultados](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Resultados)
 - [Otros](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Otros)
 
-## Objetivos
+## Objetivos 
+[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Indice)
 
 - Se deberá generar un archivo con las siguientes caracteristicas:
 
@@ -23,11 +24,14 @@
 </p>
 
 ## Entregables
+[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Indice)
+
 
 - Subir la clase o programa InfoSeriesRating (Escrita en Java o Python). 
 - La tupla de salida para la seria ”The Simpsons#1989” y otro resultado a nuestra elección.
 
 ## Codigos Utiles
+[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Indice)
 
 - Entrar al servidor SSH:
 
@@ -89,6 +93,7 @@
 
 
 ## Resultados
+[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Indice)
 
 - Busqueda de ```The Simpsons#1989``` entrega:
 
@@ -107,6 +112,7 @@
 > (u'Twin Peaks#1990', u'(#2.7)', 9.4, 8.52)
 
 ## Otros
+[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Indice)
 
 - Script para buscar en todos los archivos:
 
