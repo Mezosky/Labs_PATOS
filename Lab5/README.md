@@ -30,7 +30,15 @@
 - Subir la clase o programa InfoSeriesRating (Escrita en Java o Python). 
 - La tupla de salida para la seria ”The Simpsons#1989” y otro resultado a nuestra elección.
 
-## Codigos Utiles
+## Aclaración
+
+Esta tarea fue realizada en ```python``` y los códigos que ejecutan la tarea solicitada son:
+
+> entrega1.py 
+
+> entrega2.py
+
+## Códigos Utiles
 [Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5#Indice)
 
 - Entrar al servidor SSH:
