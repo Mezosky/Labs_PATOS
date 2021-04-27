@@ -21,14 +21,33 @@ if __name__ == "__main__":
 
     seriesEpisodeRating = tvSeries.map(lambda line: (line[3]+ "#" + line[4] + "#" + line[5], line[7], float(line[2])))
 
+    # Maximo valor
     seriesToEpisodeRating = seriesEpisodeRating.map(lambda tup: (tup[0], tup[2]))
+    seriesMax = seriesToEpisodeRating.reduceByKey(max)
 
+    # Promedio de las series
     seriesToSumCountRating = seriesToEpisodeRating.aggregateByKey((0.0, 0), \
         lambda sumCount, rating: (sumCount[0] + rating, sumCount[1] + 1), \
         lambda sumCountA, sumCountB: (sumCountA[0] + sumCountB[0], sumCountA[1] + sumCountB[1]))
-    
-    seriesToAvgRating = seriesToSumCountRating.mapValues(lambda tup2n: tup2n[0]/tup2n[1])
+    seriesToAvgRating = seriesToSumCountRating.mapValues(lambda tup2n:  round(tup2n[0]/tup2n[1], 2))
 
-    seriesToAvgRating.saveAsTextFile(fileout);
+    # Juntar episodios con mejor rating
+    """seriesToEpisodeRating = seriesEpisodeRating.map(lambda tup: (tup[0], tup[1]))
+    seriesEpisodes = seriesToEpisodeRating.aggregateByKey((''), \
+        lambda sumString, tupla: (sumString + '|' + tupla), \
+        lambda sumCountA, sumCountB: (sumCountA + sumCountB))
+"""
+    seriesToEpisodes = seriesEpisodeRating.map(lambda tup: (tup[0], tup[1]))
+    join_test = seriesMax.join(seriesToEpisodes)
+
+    join_test = join_test.map(lambda tup: (tup[0], tup[1]))
+    seriesEpisodes = join_test.aggregateByKey((''), \
+        lambda sumString, tupla: (sumString + '|' + tupla[1]), \
+        lambda sumCountA, sumCountB: (sumCountA + sumCountB))
+    #Join
+    #join_series = seriesMax.join(seriesToAvgRating)
+    #join_series = join_series.flatMap()
+
+    seriesEpisodes.saveAsTextFile(fileout);
 
     spark.stop()
