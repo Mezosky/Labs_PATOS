@@ -1,3 +1,13 @@
+'''
+Por Ignacio Meza de la Jara y José Espina
+https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5
+
+(2) the output tuple for the series "The Simpsons#1989" and another output tuple of your choice:
+(u'The Simpsons#1989', u"Homer's Enemy (#8.23)", 9.2, 7.38)
+Para "Twin Peaks#1990":
+(u'Twin Peaks#1990', u'(#2.7)', 9.4, 8.52)
+'''
+
 from pyspark.sql import SparkSession
 import sys
 
