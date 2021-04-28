@@ -7,6 +7,7 @@ Aquí encontraras los desarrollos de los laboratorios de PATOS. Estos son realiz
 - <a href="https://github.com/Mezosky/Labs_PATOS/tree/main/Lab3">Laboratorio 3: Hadoop</a>
 - <a href="https://github.com/Mezosky/Labs_PATOS/tree/main/Lab4">Laboratorio 4: Apache Pig</a>
 - <a href="https://github.com/Mezosky/Labs_PATOS/tree/main/Lab5">Laboratorio 5: Apache Spark</a>
+- <a href="https://github.com/Mezosky/Labs_PATOS/tree/main/Lab6">Laboratorio 6: Apache Kafka</a>
 
 
 
