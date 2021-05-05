@@ -36,6 +36,7 @@
         java -jar mdp-kafka.jar KafkaExample grupo34-example
         kafka-topics.sh --delete --zookeeper localhost:2181 --topic grupo34-example
 
+
         kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic grupo34-tweets
         java -jar mdp-kafka.jar TwitterSimulator /data/uhadoop/shared/twitter/tweets_20170919.tsv.gz grupo34-tweets 100
 
