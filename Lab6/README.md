@@ -1,7 +1,7 @@
 # Laboratorio 6: Apache Kafka
 
 <p align="center">
-<img src="https://rajvansia.com/images/KafkaVitals.gif" alt="apacheKafka" height="200">
+<img src="https://rajvansia.com/images/KafkaVitals.gif" alt="apacheKafka" height="300">
 </p>
 
 ## Objetivos
