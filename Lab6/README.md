@@ -42,4 +42,11 @@
 
 - Correr codigos del Lab:
 
-        java -jar mdp-kafka.jar PrintEarthquakeTweets grupo34-tweets
+        java -jar mdp-kafka.jar TwitterSimulator /data/uhadoop/shared/twitter/tweets_20170919.tsv.gz grupo34-tweets 1000
+        java -jar mdp-kafka.jar MyProducer grupo34-tweets grupo34-tuits
+        java -jar mdp-kafka.jar MyConsumer grupo34-tuits
+
+## Resultados
+
+        [results.txt]()
+        
