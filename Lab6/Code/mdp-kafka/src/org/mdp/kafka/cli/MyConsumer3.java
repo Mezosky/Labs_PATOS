@@ -99,6 +99,7 @@ public class MyConsumer3 {
 				System.out.print(" \n");
 				System.out.print(" \n");
 				System.out.print("Fueron encontrados "+ countValue25 + " Minor burst.");
+				System.out.print(" \n");
 				System.out.print("Fueron encontrados "+ countValue50 + " Major burst.");
 				System.out.print(" \n");
 				System.out.print(" \n");
