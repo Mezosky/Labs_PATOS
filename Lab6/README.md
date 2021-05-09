@@ -30,18 +30,18 @@ La "magia" de la detección se encontrará en el Consumer, quien a través de co
 
 ```Java
 if (timeDelta <= 25 && !burst25 && timeDelta > 0) {
-							burst25 = true;
-							Minortwits.addLast(strFirstTwit);
-						} else if (timeDelta > 25 && burst25  && timeDelta > 0){
-							burst25 = false;
-						}
-						if (timeDelta <= 50 && !burst50  && timeDelta > 0) {
-							burst50 = true;
-							Majortwits.addLast(strFirstTwit);
-						} else if (timeDelta > 50 && burst50  && timeDelta > 0){
-							burst50 = false;
-						}
-						twits.clear();
+	burst25 = true;
+	Minortwits.addLast(strFirstTwit);
+} else if (timeDelta > 25 && burst25  && timeDelta > 0){
+	burst25 = false;
+}
+if (timeDelta <= 50 && !burst50  && timeDelta > 0) {
+	burst50 = true;
+	Majortwits.addLast(strFirstTwit);
+} else if (timeDelta > 50 && burst50  && timeDelta > 0){
+	burst50 = false;
+}
+twits.clear();
 ```
 
 ## Resultados
