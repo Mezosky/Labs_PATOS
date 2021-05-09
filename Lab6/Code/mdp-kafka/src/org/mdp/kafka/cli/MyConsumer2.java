@@ -13,14 +13,14 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
 
-public class MyConsumer {
+public class MyConsumer2 {
 	public static final String[] EARTHQUAKE_SUBSTRINGS = new String[] { "terremoto", "temblor", "sismo", "quake" };
 	public static final int FIFO_SIZE = 50; // detect this number in a window
 	public static final int WARNING_WINDOW_SIZE = 50000; // create warning for this window
 	public static final int CRITICAL_WINDOW_SIZE = 25000; // create critical message for this window
 	public static final SimpleDateFormat TWITTER_DATE = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	
-	public static void main(String[] args) throws FileNotFoundException, IOException{
+	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException{
 		if(args.length==0 || args.length>1){
 			System.err.println("Usage [inputTopic]");
 			return;
@@ -67,14 +67,12 @@ public class MyConsumer {
 						twits.removeFirst();
 					}
 				}
-				String countValue25 = Integer.toString(count25);
-				String countValue50 = Integer.toString(count50);
-				System.out.print("Fueron encontrados "+ countValue25 + " burst menores a 25.");
-				System.out.print("Fueron encontrados "+ countValue50 + " burst menores a 50.");
 			}
-		} catch (Exception e) {
-			System.err.println(e.getMessage());
 		} finally {
+			String countValue25 = Integer.toString(count25);
+			String countValue50 = Integer.toString(count50);
+			System.out.print("Fueron encontrados "+ countValue25 + " Minor burst.");
+			System.out.print("Fueron encontrados "+ countValue50 + " Major burst.");
 			consumer.close();
 		}
 	}

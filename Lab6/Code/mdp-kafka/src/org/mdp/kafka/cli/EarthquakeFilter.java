@@ -47,7 +47,7 @@ public class EarthquakeFilter {
 					String lowercase = record.value().toLowerCase();
 					
 					// check if record value contains keyword
-					// (could be optimised a lot)
+					// (could be optimized a lot)
 					for(String ek: EARTHQUAKE_SUBSTRINGS){
 						// if so print it out to the console
 						if(lowercase.contains(ek)){
