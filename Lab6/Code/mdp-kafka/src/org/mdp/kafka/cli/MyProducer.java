@@ -1,79 +1,116 @@
 package org.mdp.kafka.cli;
 
-import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.apache.kafka.clients.consumer.ConsumerRecords;
-import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.mdp.kafka.def.KafkaConstants;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Properties;
-import java.util.UUID;
+import java.util.*;
+import java.util.zip.GZIPInputStream;
 
 public class MyProducer {
 	public static final String[] EARTHQUAKE_SUBSTRINGS = new String[] { "terremoto", "temblor", "sismo", "quake" };
-	public static final int FIFO_SIZE = 50; // detect this number in a window
-	public static final int WARNING_WINDOW_SIZE = 50000; // create warning for this window
-	public static final int CRITICAL_WINDOW_SIZE = 25000; // create critical message for this window
 	public static final SimpleDateFormat TWITTER_DATE = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	public static int TWEET_ID = 2;
+	BufferedReader tweets;
+	String outputTopic;
+	long startSim = 0;
+	long startData = 0;
+	int speedup = 1000;
+	int id = TWEET_ID;
 
-	public static void main(String[] args) throws FileNotFoundException, IOException{
-		if(args.length==0 || args.length>2){
-			System.err.println("Usage [inputTopic] [outputTopic]");
+	public static void main(String[] args) throws IOException {
+		if (args.length != 2) {
+			System.err.println("Usage [gzipped twits] [outputTopic]");
 			return;
 		}
+		BufferedReader tweets = new BufferedReader(new InputStreamReader(new GZIPInputStream(new FileInputStream(args[0]))));
 		String outputTopic = args[1];
-		Properties props = KafkaConstants.PROPS;
-		/*
-		if(args.length==2){ // if we should replay stream from the start
-			// randomise consumer ID for kafka doesn't track where it is
-			props.put(ConsumerConfig.GROUP_ID_CONFIG, UUID.randomUUID().toString()); 
-			// tell kafka to replay stream for new consumers
-			props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
-		}
-		*/
-		KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
-		consumer.subscribe(Arrays.asList(args[0]));
-		Producer<String, String> producer = new KafkaProducer<String, String>(KafkaConstants.PROPS);
+		MyProducer c = new MyProducer(tweets, outputTopic);
+		c.produce();
+	}
 
-		try{
-			while (true) {
-				// every ten milliseconds get all records in a batch
-				ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(10));
-				
-				// for all records in the batch
-				for (ConsumerRecord<String, String> record : records) {
-					String lowercase = record.value().toLowerCase();
-					
-					// check if record value contains keyword
-					// (could be optimised a lot)
-					for(String ek: EARTHQUAKE_SUBSTRINGS){
-						// if so print it out to the console
-						if(lowercase.contains(ek)){
-							String[] tabs = lowercase.split("\t");
-							String idStr = tabs[2];
-							long timeData = TWITTER_DATE.parse(tabs[0]).getTime();
-							producer.send(new ProducerRecord<String,String>(outputTopic, 0, timeData, idStr, lowercase));
-							//System.out.println(record.value());
-							//prevents multiple print of the same tweet
-							break;
+	MyProducer(BufferedReader tweets, String topic) {
+		this.tweets = tweets;
+		this.outputTopic = topic;
+	}
+
+	public void produce() {
+		Thread one = new Thread() {
+			public void run() {
+				String line;
+				long wait = 0;
+				boolean isAboutEarthquakes;
+				Producer<String, String> producer = new KafkaProducer<String, String>(KafkaConstants.PROPS);
+				try{
+					while((line = tweets.readLine())!=null){
+						String[] tabs = line.split("\t");
+						if(tabs.length>id){
+							try{
+								isAboutEarthquakes = false;
+								for(String ek: EARTHQUAKE_SUBSTRINGS) {
+									if(line.toLowerCase(Locale.ROOT).contains(ek)){
+										isAboutEarthquakes = true;
+										break;
+									}
+								}
+								if(!isAboutEarthquakes) continue;
+								long timeData = getUnixTime(tabs[0]);
+								if(startData == 0)
+									startData = timeData;
+								wait = calculateWait(timeData);
+								String idStr = tabs[id];
+								if(wait>0){
+									Thread.sleep(wait);
+								}
+								producer.send(new ProducerRecord<String,String>(outputTopic, 0, timeData, idStr, line));
+							} catch(ParseException | NumberFormatException pe){
+								System.err.println("Cannot parse date "+tabs[0]);
+							}
+						}
+
+						if (Thread.interrupted()) {
+							throw new InterruptedException();
 						}
 					}
+				} catch(IOException ioe){
+					System.err.println(ioe.getMessage());
+				} catch(InterruptedException ie){
+					System.err.println("Interrupted "+ie.getMessage());
 				}
+
+				System.err.println("Finished! Messages were "+wait+" ms from target speed-up times.");
 			}
-		} catch (Exception e) {
-			System.err.print("failure: " + e.getMessage());
-		} finally{
-			consumer.close();
+		};
+		one.start();
+	}
+	private long calculateWait(long time) {
+		long current = System.currentTimeMillis();
+
+		// how long we have waited since start
+		long delaySim = current - startSim;
+		if(delaySim<0){
+			// the first element ...
+			// wait until startSim
+			return delaySim*-1;
 		}
+
+		// calculate how long we should wait since start
+		long delayData = time - startData;
+		long shouldDelay = delayData / speedup;
+
+		// if we've already waited long enough
+		if(delaySim>=shouldDelay) return 0;
+			// otherwise return wait time
+		else return shouldDelay - delaySim;
+	}
+
+	// example 2017-09-19 00:07:03
+	public long getUnixTime(String dateTime) throws ParseException{
+		Date d = TWITTER_DATE.parse( dateTime );
+		return d.getTime();
 	}
 }
