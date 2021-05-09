@@ -43,6 +43,13 @@ if (timeDelta <= 50 && !burst50  && timeDelta > 0) {
 }
 twits.clear();
 ```
+## Clase creada
+
+¿Dónde están los códigos?...
+
+> [`EarthquakeFilter.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab6/Code/mdp-kafka/src/org/mdp/kafka/cli/MyProducer.java)
+
+> [`BurstDetector.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab6/Code/mdp-kafka/src/org/mdp/kafka/cli/MyConsumer3.java)
 
 ## Resultados
 
