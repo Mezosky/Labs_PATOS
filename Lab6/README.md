@@ -29,6 +29,7 @@ La "magia" de la detección se encontrará en el Consumer, quien a través de co
 >Notar: Se utiliza un timeDelta>0 para evitar potenciales errores en el orden de los tweets (encontramos algunos).
 
 ```Java
+// Realizamos condicionales para la busqueda de las rafagas major/minor
 if (timeDelta <= 25 && !burst25 && timeDelta > 0) {
 	burst25 = true;
 	Minortwits.addLast(strFirstTwit);
@@ -45,11 +46,12 @@ twits.clear();
 ```
 ## Clase creada
 
-¿Dónde están los códigos?...
+Hermanito, antes de pegarte el show, ¿Dónde están los códigos?...
 
-> [`EarthquakeFilter.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab6/Code/mdp-kafka/src/org/mdp/kafka/cli/MyProducer.java)
 
-> [`BurstDetector.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab6/Code/mdp-kafka/src/org/mdp/kafka/cli/MyConsumer3.java)
+> [Producer: `EarthquakeFilter.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab6/Code/mdp-kafka/src/org/mdp/kafka/cli/MyProducer.java)
+
+> [Consumer: `BurstDetector.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab6/Code/mdp-kafka/src/org/mdp/kafka/cli/MyConsumer3.java)
 
 ## Resultados
 

@@ -43,6 +43,7 @@ public class MyConsumer3 {
 		LinkedList<String> twits = new LinkedList<String>();
 		LinkedList<String> Minortwits = new LinkedList<String>();
 		LinkedList<String> Majortwits = new LinkedList<String>();
+		// Booleanos necesarios para marcar las etapas de ra-fa-ga!
 		boolean burst50, burst25;
 		try{
 			while (true) {
@@ -51,21 +52,26 @@ public class MyConsumer3 {
 				burst50 = false;
 				burst25 = false;
 				
-				// for all records in the batch
+				// Recorremos todos los elementos del batch
 				for (ConsumerRecord<String, String> record : records) {
 					String lowercase = record.value().toLowerCase();
 					
-					// check if record value contains keyword
-					// (could be optimized a lot)
+					// Agregamos a la lista enlazada un twit.
 					twits.addLast(lowercase);
+					// Si la lista alcanza el largo 50 revisamos si existe burst.
 					if (twits.size() == FIFO_SIZE) {
+						// Obtenemos el primer y ultimo elemento de la lista
 						String strFirstTwit = twits.getFirst();
 						String strLastTwit = twits.getLast();
+						// Separamos los elementos
 						String[] tabsFirstTwit = strFirstTwit.split("\t");
 						String[] tabsLastTwit = strLastTwit.split("\t");
+						// Obtenemos el tiempo en el formato Timestamp
 						long timeDataFirstTwit = TWITTER_DATE.parse(tabsFirstTwit[0]).getTime();
 						long timeDataLastTwit = TWITTER_DATE.parse(tabsLastTwit[0]).getTime();
+						// Realizamos la resta
 						long timeDelta = (timeDataLastTwit - timeDataFirstTwit)/1000;
+						// Realizamos condicionales para la busqueda de las rafagas major/minor
 						if (timeDelta <= 25 && !burst25 && timeDelta > 0) {
 							burst25 = true;
 							Minortwits.addLast(strFirstTwit);
@@ -81,6 +87,7 @@ public class MyConsumer3 {
 						twits.clear();
 					}
 				}
+				// Imprimimos resultados :D
 				String countValue25 = Integer.toString(Majortwits.size());
 				String countValue50 = Integer.toString(Minortwits.size());
 				System.out.print("##########Major Tweets##########");
