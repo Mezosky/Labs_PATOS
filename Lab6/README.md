@@ -63,6 +63,7 @@ Resulto ser mas información de lo que se creia......
 
 - Resumen de los resultados encontrados:
 
+        ##########Resumen##########
         Fueron encontrados 412 Minor burst.
         Fueron encontrados 343 Major burst.
 
