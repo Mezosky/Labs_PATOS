@@ -29,20 +29,56 @@ La "magia" de la detección se encontrará en el Consumer, quien a través de co
 >Notar: Se utiliza un timeDelta>0 para evitar potenciales errores en el orden de los tweets (encontramos algunos).
 
 ```Java
-// Realizamos condicionales para la busqueda de las rafagas major/minor
-if (timeDelta <= 25 && !burst25 && timeDelta > 0) {
-	burst25 = true;
-	Minortwits.addLast(strFirstTwit);
-} else if (timeDelta > 25 && burst25  && timeDelta > 0){
-	burst25 = false;
-}
-if (timeDelta <= 50 && !burst50  && timeDelta > 0) {
-	burst50 = true;
-	Majortwits.addLast(strFirstTwit);
-} else if (timeDelta > 50 && burst50  && timeDelta > 0){
-	burst50 = false;
-}
-twits.clear();
+if (Majortwits.size() == FIFO_SIZE) {
+        // Obtenemos el primer y ultimo elemento de la lista
+	String strFirstTwit = Majortwits.getFirst();
+	String strLastTwit = Majortwits.getLast();
+        // Separamos los elementos
+	String[] tabsFirstTwit = strFirstTwit.split("\t");
+	String[] tabsLastTwit = strLastTwit.split("\t");
+	// Obtenemos el tiempo en el formato Timestamp
+	long timeDataFirstTwit = TWITTER_DATE.parse(tabsFirstTwit[0]).getTime();
+	long timeDataLastTwit = TWITTER_DATE.parse(tabsLastTwit[0]).getTime();
+	// Realizamos la resta, y transformamos a segundos
+	long timeDelta = (timeDataLastTwit - timeDataFirstTwit)/1000;
+        // Realizamos condicionales para la busqueda de las rafagas major/minor
+	if (timeDelta <= 25 && !boolMajor && timeDelta > 0) {
+                boolMajor = true;
+		BurstMajor.addLast(strFirstTwit);
+		Majortwits.removeFirst();
+	} else if (timeDelta > 25 && boolMajor){
+		boolMajor = false;
+		Majortwits.clear();
+		Majortwits.addLast(lowercase);
+	} else {
+		Majortwits.removeFirst();
+                }
+	}
+	if (Minortwits.size() == FIFO_SIZE) {
+		// Obtenemos el primer y ultimo elemento de la lista
+		String strFirstTwit = Minortwits.getFirst();
+		String strLastTwit = Minortwits.getLast();
+		// Separamos los elementos
+		String[] tabsFirstTwit = strFirstTwit.split("\t");
+		String[] tabsLastTwit = strLastTwit.split("\t");
+		// Obtenemos el tiempo en el formato Timestamp
+		long timeDataFirstTwit = TWITTER_DATE.parse(tabsFirstTwit[0]).getTime();
+		long timeDataLastTwit = TWITTER_DATE.parse(tabsLastTwit[0]).getTime();
+		// Realizamos la resta, y transformamos a segundos
+		long timeDelta = (timeDataLastTwit - timeDataFirstTwit)/1000;
+		// Realizamos condicionales para la busqueda de las rafagas major/minor
+		if (timeDelta <= 50 && !boolMinor && timeDelta > 0) {
+			boolMinor = true;
+			BurstMinor.addLast(strFirstTwit);
+			Minortwits.removeFirst();
+			} else if (timeDelta > 50 && boolMinor){
+                                boolMajor = false;
+				Minortwits.clear();
+				Minortwits.addLast(lowercase);
+			} else {
+				Minortwits.removeFirst();
+                                }
+                        }
 ```
 ## Clase creada
 
