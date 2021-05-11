@@ -54,31 +54,31 @@ if (Majortwits.size() == FIFO_SIZE) {
 		Majortwits.removeFirst();
                 }
 	}
-	if (Minortwits.size() == FIFO_SIZE) {
-		// Obtenemos el primer y ultimo elemento de la lista
-		String strFirstTwit = Minortwits.getFirst();
-		String strLastTwit = Minortwits.getLast();
-		// Separamos los elementos
-		String[] tabsFirstTwit = strFirstTwit.split("\t");
-		String[] tabsLastTwit = strLastTwit.split("\t");
-		// Obtenemos el tiempo en el formato Timestamp
-		long timeDataFirstTwit = TWITTER_DATE.parse(tabsFirstTwit[0]).getTime();
-		long timeDataLastTwit = TWITTER_DATE.parse(tabsLastTwit[0]).getTime();
-		// Realizamos la resta, y transformamos a segundos
-		long timeDelta = (timeDataLastTwit - timeDataFirstTwit)/1000;
-		// Realizamos condicionales para la busqueda de las rafagas major/minor
-		if (timeDelta <= 50 && !boolMinor && timeDelta > 0) {
-			boolMinor = true;
-			BurstMinor.addLast(strFirstTwit);
+if (Minortwits.size() == FIFO_SIZE) {
+	// Obtenemos el primer y ultimo elemento de la lista
+	String strFirstTwit = Minortwits.getFirst();
+	String strLastTwit = Minortwits.getLast();
+	// Separamos los elementos
+	String[] tabsFirstTwit = strFirstTwit.split("\t");
+	String[] tabsLastTwit = strLastTwit.split("\t");
+	// Obtenemos el tiempo en el formato Timestamp
+	long timeDataFirstTwit = TWITTER_DATE.parse(tabsFirstTwit[0]).getTime();
+	long timeDataLastTwit = TWITTER_DATE.parse(tabsLastTwit[0]).getTime();
+	// Realizamos la resta, y transformamos a segundos
+	long timeDelta = (timeDataLastTwit - timeDataFirstTwit)/1000;
+	// Realizamos condicionales para la busqueda de las rafagas major/minor
+	if (timeDelta <= 50 && !boolMinor && timeDelta > 0) {
+		boolMinor = true;
+		BurstMinor.addLast(strFirstTwit);
+		Minortwits.removeFirst();
+		} else if (timeDelta > 50 && boolMinor){
+			boolMajor = false;
+			Minortwits.clear();
+			Minortwits.addLast(lowercase);
+		} else {
 			Minortwits.removeFirst();
-			} else if (timeDelta > 50 && boolMinor){
-                                boolMajor = false;
-				Minortwits.clear();
-				Minortwits.addLast(lowercase);
-			} else {
-				Minortwits.removeFirst();
-                                }
-                        }
+			}
+    }
 ```
 ## Clase creada
 
