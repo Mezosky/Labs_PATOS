@@ -99,9 +99,9 @@ Resulto ser mas información de lo que se creia......
 
 - Resumen de los resultados encontrados:
 
-        ##########Resumen##########
-        Fueron encontrados 412 Minor burst.
-        Fueron encontrados 343 Major burst.
+        ##########Resumen########## 
+        Fueron encontrados 333 Major burst. 
+        Fueron encontrados 1 Minor burst. 
 
 - Donde la salida generada (solicitada) es de la forma:
 
