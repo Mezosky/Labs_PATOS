@@ -89,6 +89,10 @@ Resulto ser mas información de lo que se creia......
 
         scp -P 220 D:\pandicosas\Codes\Eclipe_projects\Labs_PATOS\Lab6\Code\mdp-kafka\dist\mdp-kafka.jar uhadoop@cm.dcc.uchile.cl:/data/2021/uhadoop/grupo34/
 
+- Obtener archivos del LFS: 
+
+        scp -P 220 uhadoop@cm.dcc.uchile.cl:/data/2021/uhadoop/grupo34/results.txt C:/Users/imeza/Desktop/
+
 - Correr Ejemplos:
 
         kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic grupo34-example
@@ -103,9 +107,9 @@ Resulto ser mas información de lo que se creia......
 
 - Correr codigos del Lab:
 
-        java -jar mdp-kafka.jar TwitterSimulator /data/uhadoop/shared/twitter/tweets_20170919.tsv.gz grupo34-tweets 1000
-        java -jar mdp-kafka.jar MyProducer grupo34-tweets grupo34-tuits
-        java -jar mdp-kafka.jar MyConsumer3 grupo34-tuits
+        java -jar mdp-kafka.jar MyProducer /data/uhadoop/shared/twitter/tweets_20170919.tsv.gz grupo34-tuits
+        java -jar mdp-kafka.jar MyConsumer2 grupo34-tuits > results.txt
+
 
 
         
