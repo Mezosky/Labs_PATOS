@@ -51,7 +51,7 @@ Hermanito, antes de pegarte el show, ¿Dónde están los códigos?...
 
 > [Producer: `EarthquakeFilter.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab6/Code/mdp-kafka/src/org/mdp/kafka/cli/MyProducer.java)
 
-> [Consumer: `BurstDetector.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab6/Code/mdp-kafka/src/org/mdp/kafka/cli/MyConsumer3.java)
+> [Consumer: `BurstDetector.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab6/Code/mdp-kafka/src/org/mdp/kafka/cli/MyConsumer.java)
 
 ## Resultados
 
