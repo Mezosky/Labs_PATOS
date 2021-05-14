@@ -40,7 +40,7 @@ Hermanito este proyecto tiene muchos archivos, ¿dónde está el Código princip
     - "feynman"
 
 Donde, el archivo con los resultados es:
-> [`results.txt`](https://raw.githubusercontent.com/Mezosky/Labs_PATOS/main/Lab7/Resultados/results.txt)
+> [`results.txt`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab7/Resultados/results.txt)
 
 ## Codigos utiles para la ejecución del Lab
 
