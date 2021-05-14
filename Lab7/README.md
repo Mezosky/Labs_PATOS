@@ -15,22 +15,25 @@ curl -X PUT "cm:9200/mywiki?pretty" -H 'Content-Type: application/json' -d'{"map
 
 - Crear index
 
-        curl -X PUT "cm:9200/wikiG34?pretty" -H 'Content-Type: application/json' -d'{
+        curl -X PUT "cm:9200/wikig34?pretty" -H 'Content-Type: application/json' -d'{
             "mappings" : {
                 "_doc" : {
                     "properties" : {
                         "TITLE" : {
                             "type" : "text",
                             "store" : "true",
-                            "analyzer" : "spanish"}, 
+                            "analyzer" : "spanish"
+                        }, 
                         "ABSTACT" : {
                             "type" : "text",
                             "store" : "true",
-                            "analyzer" : "spanish"}, 
+                            "analyzer" : "spanish"
+                        }, 
                         "URL" : {"type" : "text",
                                 "store" : "true",
                                 "analyzer" : "spanish"}, 
-                        "MODIFIED" :
+                        "MODIFIED" : {"type" : "date"
+                        }
                     }
                 }
             }
@@ -42,4 +45,6 @@ curl -X PUT "cm:9200/mywiki?pretty" -H 'Content-Type: application/json' -d'{"map
 
 - Ejecutar
 
-        java -jar mdp-elasticsearch.jar BuildWikiIndexBulk -i /data/uhadoop/shared/wiki/es-wiki-articles.tsv.gz -igz -o index-name
+        java -jar mdp-elasticsearch.jar BuildWikiIndexBulk -i /data/uhadoop/shared/wiki/es-wiki-articles.tsv.gz -igz -o wikig34
+
+        java -jar mdp-elasticsearch.jar SearchWikiIndex -i wikig34
