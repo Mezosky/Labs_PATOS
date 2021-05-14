@@ -20,6 +20,8 @@ import org.elasticsearch.index.query.MultiMatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 
+import cl.uchile.pmd.BuildWikiIndexBulk.FieldNames;
+
 /**
  * Main method to search articles using Elasticsearch.
  * 
@@ -113,6 +115,8 @@ public class SearchWikiIndex {
 						//@TODO: add the abstract field to the fields searched
 						// the boost sets a matching word in an abstract to have
 						// a different ranking weight than other fields
+						float abstractBoost = BOOSTS.get(FieldNames.ABSTRACT.name());
+						multiMatchQueryBuilder.field(FieldNames.ABSTRACT.name(), abstractBoost);
 
 						// here we run the search, specifying how many results
 						// we want per "page" of results
@@ -120,6 +124,7 @@ public class SearchWikiIndex {
 								.setSize(DOCS_PER_PAGE).setExplain(true).get();
 						
 						// for each document in the results ...
+						System.out.println("Title\tURL\tAbstract");
 						for (SearchHit hit : response.getHits().getHits()) {
 							// get the JSON data per field
 							Map<String, Object> json = hit.getSourceAsMap();
@@ -127,6 +132,9 @@ public class SearchWikiIndex {
 							
 							//@TODO: get and print the title, url and abstract of each result
 							// print the details of the doc (title, url, abstract) to standard out
+							String url = (String) json.get(FieldNames.URL.name());
+							String abst = (String) json.getOrDefault(FieldNames.ABSTRACT.name(), "");
+							System.out.println(title+"\t"+url+"\t"+abst);
 						}
 					} catch (Exception e) {
 						System.err.println("Error with query '" + line + "'");
