@@ -124,7 +124,18 @@ public class SearchWikiIndex {
 								.setSize(DOCS_PER_PAGE).setExplain(true).get();
 						
 						// for each document in the results ...
-						System.out.println("Title\tURL\tAbstract");
+						System.out.println(" .d8888b.                                      .d8888b.      d8888  \n");
+						System.out.println("d88P  Y88b                                    d88P  Y88b    d8P888  \n");
+						System.out.println("888    888                                         .d88P   d8P 888  \n");
+						System.out.println("888        888d888 888  888 88888b.   .d88b.      8888\"   d8P  888  \n");
+						System.out.println("888  88888 888P\"   888  888 888 \"88b d88\"\"88b      \"Y8b. d88   888  \n");
+						System.out.println("888    888 888     888  888 888  888 888  888 888    888 8888888888 \n");
+						System.out.println("Y88b  d88P 888     Y88b 888 888 d88P Y88..88P Y88b  d88P       888  \n");
+						System.out.println(" \"Y8888P88 888      \"Y88888 88888P\"   \"Y88P\"   \"Y8888P\"        888  \n");
+						System.out.println("                            888                                     \n");
+						System.out.println("                            888                                     \n");
+						System.out.println("                            888                                     \n");
+						System.out.println("Title\tURL\tAbstract\n");
 						for (SearchHit hit : response.getHits().getHits()) {
 							// get the JSON data per field
 							Map<String, Object> json = hit.getSourceAsMap();
@@ -135,6 +146,7 @@ public class SearchWikiIndex {
 							String url = (String) json.get(FieldNames.URL.name());
 							String abst = (String) json.getOrDefault(FieldNames.ABSTRACT.name(), "");
 							System.out.println(title+"\t"+url+"\t"+abst);
+							System.out.println("\n");
 						}
 					} catch (Exception e) {
 						System.err.println("Error with query '" + line + "'");
