@@ -31,6 +31,12 @@ Hermanito este proyecto tiene muchos archivos, ¿dónde está el Código princip
 
 ## Resultados
 
+<p align="center">
+<img src="https://thumbs.gfycat.com/ShamefulDisfiguredHorseshoebat-max-1mb.gif" alt="kpopit" height="300">
+</p>
+
+
+
 - Se realizo la Busqueda de las siguientes palabras:
 
     - "obama"
