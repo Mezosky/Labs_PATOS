@@ -20,14 +20,15 @@
 
 ## Codigos
 
-Hermanito este proyecto tiene muchos archivos, ¿dónde está el Código principal?. A continuación, puedes encontrar las clases:
-
-> [`BuildWikiIndexBulk.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab7/Codes/mdp-elasticsearch/src/cl/uchile/pmd/BuildWikiIndexBulk.java)
-> [`SearchWikiIndex.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab7/Codes/mdp-elasticsearch/src/cl/uchile/pmd/SearchWikiIndex.java)
-
 <p align="center">
 <img src="https://media.tenor.com/images/a2f66c292f5a4fa9fd898bd06ddcfcbe/tenor.gif" alt="busquedaelasticada" height="300">
 </p>
+
+Hermanito este proyecto tiene muchos archivos, ¿dónde está el Código principal?. A continuación, puedes encontrar las clases:
+
+> [`BuildWikiIndexBulk.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab7/Codes/mdp-elasticsearch/src/cl/uchile/pmd/BuildWikiIndexBulk.java)
+
+> [`SearchWikiIndex.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab7/Codes/mdp-elasticsearch/src/cl/uchile/pmd/SearchWikiIndex.java)
 
 ## Resultados
 
@@ -37,13 +38,13 @@ Hermanito este proyecto tiene muchos archivos, ¿dónde está el Código princip
 
 
 
-- Se realizo la Busqueda de las siguientes palabras:
+Se realiza la Busqueda de las siguientes palabras:
 
-    - "obama"
-    - "huxley"
-    - "ng"
-    - "k-pop"
-    - "feynman"
+    "obama"
+    "huxley"
+    "ng"
+    "k-pop"
+    "feynman"
 
 Donde, el archivo con los resultados es:
 > [`results.txt`](https://raw.githubusercontent.com/Mezosky/Labs_PATOS/main/Lab7/Resultados/results.txt)
