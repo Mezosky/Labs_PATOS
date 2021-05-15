@@ -119,3 +119,9 @@ Donde, se obtienen los siguientes resultados:
 - Ejecutar el buscador sonico:
 
         java -jar mdp-elasticsearch.jar SearchWikiIndex -i wikig34 > results_lab7.txt
+
+---
+
+<p align="center">
+<img src="https://kanikag.com/images/articles-Women-Comics-Pig-Hooey-giphy.gif" height="300">
+</p>
