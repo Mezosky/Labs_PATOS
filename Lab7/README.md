@@ -6,10 +6,10 @@
 
 ## Objetivos
 
-- Construir las clases ```BuildWikiIndexBulk``` y ```SearchWikiIndex``` para realizar búsquedas (ultra rápidas) en muchos datos 😱.
+- Construir las clases ```BuildWikiIndexBulk``` y ```SearchWikiIndex``` para realizar búsquedas (ultra rápidas) en muchos datos 😱. La función principal de estos códigos es la creación de los índices y la búsqueda de palabras claves en base a los índices creados.
 
 <p align="center">
-<img src="https://lh3.googleusercontent.com/proxy/FdTczxwSWx4NH6QOwK1CKry0TXrAPUUC16Xy4oC9df97_1xsLVCPsdi71sW8_oJI10t52JOR3xefDqWIlDrBsmhuBqQhKAGaDWFp4EJCnMK5xLJVxKByOx_ix3fFTdXujEw0RXXcd9Wuom2mVqx4PcfEjwPKHMfvce4" alt="busquedaelasticada" height="300">
+<img src="https://lh3.googleusercontent.com/0qW_zsZnQu_Dpzwc8aoodnzg1c7SjZ8y4TjEWXiTRXG-Bx3z0dxRgjGiU3IGWuJJ8EFsfou0xHVM3Rd6m4MOoJKNpp0quKK3tNKtL80qqpKPI0UcZsLxOn9Pl5FCVw8ewZGusg9N" alt="busquedaelasticada" height="300">
 </p>
 
 ## Entregables
@@ -30,28 +30,9 @@ Hermanito este proyecto tiene muchos archivos, ¿dónde está el Código princip
 
 > [`SearchWikiIndex.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab7/Codes/mdp-elasticsearch/src/cl/uchile/pmd/SearchWikiIndex.java)
 
-## Resultados
+# Creación de Index:
 
-<p align="center">
-<img src="https://thumbs.gfycat.com/ShamefulDisfiguredHorseshoebat-max-1mb.gif" alt="kpopit" height="300">
-</p>
-
-
-
-Se realiza la Busqueda de las siguientes palabras:
-
-    "obama"
-    "huxley"
-    "ng"
-    "k-pop"
-    "feynman"
-
-Donde, el archivo con los resultados es:
-> [`results.txt`](https://raw.githubusercontent.com/Mezosky/Labs_PATOS/main/Lab7/Resultados/results.txt)
-
-## Codigos utiles para la ejecución del Lab
-
-- Crear index
+La parte primordial para realizar este laboratorio se centra en la creación de los índices adecuados para realizar las búsquedas. Para definimos el índex ```wikig34``` de la siguiente manera:
 
         curl -X PUT "cm:9200/wikig34?pretty" -H 'Content-Type: application/json' -d'{
             "mappings" : {
@@ -76,6 +57,26 @@ Donde, el archivo con los resultados es:
                 }
             }
         }'
+
+## Resultados
+
+<p align="center">
+<img src="https://thumbs.gfycat.com/ShamefulDisfiguredHorseshoebat-max-1mb.gif" alt="kpopit" height="300">
+</p>
+
+Una vez elaborado el codigo, realizamos las siguientes busquedas:
+
+    "obama"
+    "huxley"
+    "ng"
+    "k-pop"
+    "feynman"
+
+Donde, el archivo con los resultados es:
+
+> [`results.txt`](https://raw.githubusercontent.com/Mezosky/Labs_PATOS/main/Lab7/Resultados/results.txt)
+
+## Codigos utiles para la ejecución del Lab
 
 - Conectar a servidor:
         
