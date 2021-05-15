@@ -64,7 +64,7 @@ La parte primordial para realizar este laboratorio se centra en la creación de 
 <img src="https://thumbs.gfycat.com/ShamefulDisfiguredHorseshoebat-max-1mb.gif" alt="kpopit" height="300">
 </p>
 
-Una vez elaborado el codigo, realizamos las siguientes busquedas:
+Una vez elaborado el Código, realizamos las siguientes búsquedas:
 
     "obama"
     "huxley"
@@ -72,7 +72,7 @@ Una vez elaborado el codigo, realizamos las siguientes busquedas:
     "k-pop"
     "feynman"
 
-Donde, el archivo con los resultados es:
+Donde, se obtienen los siguientes resultados:
 
 > [`results.txt`](https://raw.githubusercontent.com/Mezosky/Labs_PATOS/main/Lab7/Resultados/results.txt)
 
