@@ -4,21 +4,35 @@
 <img src="https://blog.bismart.com/hs-fs/hubfs/Imported_Blog_Media/Elastic%20Search/Elasticsearch%20GIF.gif?width=900&name=Elasticsearch%20GIF.gif" alt="busquedaelasticada" height="300">
 </p>
 
-## Objetivos
+## Indice
 
-- Construir las clases ```BuildWikiIndexBulk``` y ```SearchWikiIndex``` para realizar búsquedas (ultra rápidas) en muchos datos 😱. La función principal de estos códigos es la creación de los índices y la búsqueda de palabras claves en base a los índices creados.
+- [Objetivos](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab7#Objetivos)
+- [Entregables](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab7#entregables)
+- [Codigos](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab7#Codigos)
+- [Creación de Index](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab7#Creación-de-Index)
+- [Resultados](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab7#Resultados)
+- [Codigos utiles para la ejecución del Lab](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab7#Codigos-utiles-para-la-ejecución-del-Lab)
+
+## Objetivos
+[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab7#Indice)
+
+
+- Construir las clases
+ ```BuildWikiIndexBulk``` y ```SearchWikiIndex``` para realizar búsquedas (ultra rápidas) en muchos datos 😱. La función principal de estos códigos es la creación de los índices y la búsqueda de palabras claves en base a los índices creados.
 
 <p align="center">
 <img src="https://lh3.googleusercontent.com/0qW_zsZnQu_Dpzwc8aoodnzg1c7SjZ8y4TjEWXiTRXG-Bx3z0dxRgjGiU3IGWuJJ8EFsfou0xHVM3Rd6m4MOoJKNpp0quKK3tNKtL80qqpKPI0UcZsLxOn9Pl5FCVw8ewZGusg9N" alt="busquedaelasticada" height="300">
 </p>
 
 ## Entregables
+[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab7#Indice)
 
 - Subir los códigos ```BuildWikiIndexBulk``` y ```SearchWikiIndex```.
 
 - Realizar la búsqueda de "obama" y 4 términos de interés.... 🤔.
 
 ## Codigos
+[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab7#Indice)
 
 <p align="center">
 <img src="https://media.tenor.com/images/a2f66c292f5a4fa9fd898bd06ddcfcbe/tenor.gif" alt="busquedaelasticada" height="300">
@@ -30,7 +44,8 @@ Hermanito este proyecto tiene muchos archivos, ¿dónde está el Código princip
 
 > [`SearchWikiIndex.java`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab7/Codes/mdp-elasticsearch/src/cl/uchile/pmd/SearchWikiIndex.java)
 
-# Creación de Index:
+## Creación de Index:
+[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab7#Indice)
 
 La parte primordial para realizar este laboratorio se centra en la creación de los índices adecuados para realizar las búsquedas. Para definimos el índex ```wikig34``` de la siguiente manera:
 
@@ -59,6 +74,7 @@ La parte primordial para realizar este laboratorio se centra en la creación de 
         }'
 
 ## Resultados
+[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab7#Indice)
 
 <p align="center">
 <img src="https://thumbs.gfycat.com/ShamefulDisfiguredHorseshoebat-max-1mb.gif" alt="kpopit" height="300">
@@ -77,6 +93,7 @@ Donde, se obtienen los siguientes resultados:
 > [`results.txt`](https://raw.githubusercontent.com/Mezosky/Labs_PATOS/main/Lab7/Resultados/results.txt)
 
 ## Codigos utiles para la ejecución del Lab
+[Volver al indice](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab7#Indice)
 
 - Conectar a servidor:
         
