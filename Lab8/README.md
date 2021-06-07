@@ -24,6 +24,8 @@ hdfs dfs -copyToLocal /uhadoop2021/grupo34/pr-full-s/part-r-00000 /data/2021/uha
 
 java -jar mdp-lab07.jar BuildWikiIndexBulkWithRank -i /data/uhadoop/shared/wiki/es-wiki-articles.tsv.gz -igz -p /data/2021/uhadoop/grupo34/ranks.s.tsv -o wikig34lab8
 
+cd /data/2021/uhadoop/lab7
+
 - Comando para obtener el top de busquedas
 
 hdfs dfs -cat  /uhadoop2021/grupo34/pr-full-s/part-r-00000 | head -n 10
