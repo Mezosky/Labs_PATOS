@@ -1,7 +1,7 @@
 # Lab 9: Cassandra
 
 <p align="center">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cassandra_logo.svg/1200px-Cassandra_logo.svg.png" alt="busquedaelasticada" height="300">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cassandra_logo.svg/1200px-Cassandra_logo.svg.png" alt="cassandra" height="300">
 </p>
 
 ## Indice
@@ -15,7 +15,7 @@
 
 ## Objetivos
 <p align="center">
-<img src="https://media1.tenor.com/images/dd0a30cba014e29bdac0c59c7a0cef45/tenor.gif?itemid=5684151" alt="busquedaelasticada" height="300">
+<img src="https://media1.tenor.com/images/dd0a30cba014e29bdac0c59c7a0cef45/tenor.gif?itemid=5684151" alt="goals" height="300">
 </p>
 
 
@@ -29,7 +29,7 @@
 ## Códigos
 
 <p align="center">
-<img src="https://media1.tenor.com/images/2bdf68f62e879811800466902712055b/tenor.gif?itemid=18482253" alt="busquedaelasticada" height="300">
+<img src="https://media1.tenor.com/images/2bdf68f62e879811800466902712055b/tenor.gif?itemid=18482253" alt="link2other" height="300">
 </p>
 
 A continuación, se adjunta el codigo de pig apache:
@@ -43,7 +43,7 @@ Por otro lado en el siguiente archivo de texto son adjuntadas las consultas real
 ## Resultados
 
 <p align="center">
-<img src="https://media1.tenor.com/images/3fb78d472db9532e3c28ec4edb916b49/tenor.gif?itemid=17201900" alt="busquedaelasticada" height="300">
+<img src="https://media1.tenor.com/images/3fb78d472db9532e3c28ec4edb916b49/tenor.gif?itemid=17201900" alt="results" height="300">
 </p>
 
 
