@@ -34,7 +34,9 @@
 
 A continuaci√≥n, se adjunta el codigo de pig apache:
 
-[`pig_cassandra.pig`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab9/Codes/mdp-lab09/test.pig)
+[`test.pig`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab9/Codes/mdp-lab09/test.pig)
+
+Este script se puede ejecutar en consola a traves de `pig test.pig`.
 
 Por otro lado en el siguiente archivo de texto son adjuntadas las consultas realizadas:
 
@@ -52,10 +54,10 @@ A continuaci√≥n, son expuestos los resultados obtenidos utilizando las tecnolog√
 
 <center>
 
- group      | groupsize  
-|------------|-----------|
-|         46 |         3 |
-|   group 5  |         1 |
+  group      | groupsize
+ ------------|-----------
+|         46 |         3
+|    group 5 |         1
 |    group15 |         3
 |        G46 |         1
 |         43 |         1
@@ -100,3 +102,7 @@ A continuaci√≥n, son expuestos los resultados obtenidos utilizando las tecnolog√
 - Inicializar Cassandra:
         
         cqlsh 10.10.10.1
+
+- Enviar archivo
+
+        scp -P 220 local-path D:\pandicosas\Codes\Eclipe_projects\Labs_PATOS\Lab9\Codes\mdp-lab09\test.pig uhadoop@cm.dcc.uchile.cl:/data/2021/uhadoop/grupo34/
