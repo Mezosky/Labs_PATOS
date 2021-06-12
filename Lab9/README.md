@@ -73,7 +73,7 @@ A continuación, son expuestos los resultados obtenidos utilizando las tecnolog�
 
 </center>
 
-## Códigos utiles para la ejecución del cluster y otros
+## Códigos útiles para la ejecución del cluster y otros
 
 - Conectar a servidor:
         
