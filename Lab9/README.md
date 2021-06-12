@@ -26,11 +26,11 @@
 
 A continuación se adjunta el codigo de pig apache:
 
-[`pig_cassandra.pig`]()
+[`pig_cassandra.pig`](https://raw.githubusercontent.com/Mezosky/Labs_PATOS/main/Lab9/Codes/mdp-lab09/test.pig)
 
 Por otro lado en el siguiente archivo de texto son adjuntadas las consultas realizadas:
 
-[`Lab9.txt`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab9/Codes/lab9.txt)
+[`Lab9.txt`](https://raw.githubusercontent.com/Mezosky/Labs_PATOS/main/Lab9/Codes/lab9.txt)
 
 ## Resultados
 
