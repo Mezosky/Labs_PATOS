@@ -10,7 +10,7 @@
 - [Entregables](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#entregables)
 - [Códigos](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#Codigos)
 - [Resultados](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#Resultados)
-- [Codigos utiles para la ejecución del Lab](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#Codigos-utiles-para-la-ejecución-del-Lab)
+- [Códigos utiles para la ejecución del Lab](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#Codigos-utiles-para-la-ejecución-del-Lab)
 
 
 ## Objetivos
