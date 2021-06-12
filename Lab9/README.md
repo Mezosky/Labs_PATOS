@@ -10,7 +10,7 @@
 - [Entregables](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#entregables)
 - [Códigos](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#Codigos)
 - [Resultados](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#Resultados)
-- [Códigos utiles para la ejecución del Lab](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#Codigos-utiles-para-la-ejecución-del-Lab)
+- [Códigos utiles para la ejecución del Lab](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#Códigos-útiles-para-la-ejecución-del-cluster-y-otros)
 
 
 ## Objetivos
@@ -73,7 +73,7 @@ A continuación, son expuestos los resultados obtenidos utilizando las tecnolog�
 
 </center>
 
-## Codigos utiles para la ejecución del cluster y otros
+## Códigos utiles para la ejecución del cluster y otros
 
 - Conectar a servidor:
         
