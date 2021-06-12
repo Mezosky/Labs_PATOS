@@ -29,7 +29,7 @@
 ## Códigos
 
 <p align="center">
-<img src="https://i.gifer.com/UFeW.gif" alt="busquedaelasticada" height="300">
+<img src="https://media1.tenor.com/images/2bdf68f62e879811800466902712055b/tenor.gif?itemid=18482253" alt="busquedaelasticada" height="300">
 </p>
 
 A continuación, se adjunta el codigo de pig apache:
