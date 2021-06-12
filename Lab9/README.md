@@ -30,7 +30,7 @@ A continuación se adjunta el codigo de pig apache:
 
 Por otro lado en el siguiente archivo de texto son adjuntadas las consultas realizadas:
 
-[`Lab9.txt`]()
+[`Lab9.txt`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab9/Codes/lab9.txt)
 
 ## Resultados
 
