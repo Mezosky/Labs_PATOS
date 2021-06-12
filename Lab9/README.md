@@ -14,6 +14,10 @@
 
 
 ## Objetivos
+<p align="center">
+<img src="https://media1.tenor.com/images/dd0a30cba014e29bdac0c59c7a0cef45/tenor.gif?itemid=5684151" alt="busquedaelasticada" height="300">
+</p>
+
 
 - [X] Realizar múltiples consultas en Cassandra.
 - [X] Contar el número de alumnos que existen por grupos en la tabla de estudiantes. Para esto se deberá utilizar las tecnologías Apache Pig y Cassandra.
@@ -24,6 +28,10 @@
 
 ## Códigos
 
+<p align="center">
+<img src="https://i.gifer.com/UFeW.gif" alt="busquedaelasticada" height="300">
+</p>
+
 A continuación, se adjunta el codigo de pig apache:
 
 [`pig_cassandra.pig`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab9/Codes/mdp-lab09/test.pig)
@@ -33,6 +41,12 @@ Por otro lado en el siguiente archivo de texto son adjuntadas las consultas real
 [`Lab9.txt`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab9/Codes/lab9.txt)
 
 ## Resultados
+
+<p align="center">
+<img src="https://media1.tenor.com/images/3fb78d472db9532e3c28ec4edb916b49/tenor.gif?itemid=17201900" alt="busquedaelasticada" height="300">
+</p>
+
+
 
 A continuación, son expuestos los resultados obtenidos utilizando las tecnologías Apache Pig y Cassandra:
 
