@@ -15,8 +15,8 @@
 
 ## Objetivos
 
-- [ ] Realizar múltiples consultas en Cassandra.
-- [ ] Contar el número de alumnos por grupos utilizando Apache Pig y Cassandra.
+- [X] Realizar múltiples consultas en Cassandra.
+- [X] Contar el número de alumnos por grupos utilizando Apache Pig y Cassandra.
 
 ## Entregables
 
@@ -24,17 +24,19 @@
 
 ## Códigos
 
-A continuación se adjunta el codigo de pig apache:
+A continuación, se adjunta el codigo de pig apache:
 
-[`pig_cassandra.pig`](https://raw.githubusercontent.com/Mezosky/Labs_PATOS/main/Lab9/Codes/mdp-lab09/test.pig)
+[`pig_cassandra.pig`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab9/Codes/mdp-lab09/test.pig)
 
 Por otro lado en el siguiente archivo de texto son adjuntadas las consultas realizadas:
 
-[`Lab9.txt`](https://raw.githubusercontent.com/Mezosky/Labs_PATOS/main/Lab9/Codes/lab9.txt)
+[`Lab9.txt`](https://github.com/Mezosky/Labs_PATOS/blob/main/Lab9/Codes/lab9.txt)
 
 ## Resultados
 
 A continuación, son expuestos los resultados obtenidos utilizando las tecnologías Apache Pig y Cassandra:
+
+<center>
 
  group      | groupsize  
 |------------|-----------|
@@ -68,6 +70,8 @@ A continuación, son expuestos los resultados obtenidos utilizando las tecnolog�
 |    grupo25 |         2
 |        G55 |         1
 |         41 |         1
+
+</center>
 
 ## Codigos utiles para la ejecución del cluster y otros
 
