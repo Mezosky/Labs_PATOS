@@ -16,7 +16,7 @@
 ## Objetivos
 
 - [X] Realizar múltiples consultas en Cassandra.
-- [X] Contar el número de alumnos por grupos utilizando Apache Pig y Cassandra.
+- [X] Contar el número de alumnos que existen por grupos en la tabla de estudiantes. Para esto se deberá utilizar las tecnologías Apache Pig y Cassandra.
 
 ## Entregables
 
