@@ -1,0 +1,91 @@
+# Innizializate Cassandra:
+cqlsh 10.10.10.1
+
+# Create a keyspace and some tables:
+
+CREATE keyspace grupo34 with replication ={ 'class' : 'SimpleStrategy', 'replication_factor' : 3 };
+
+DESCRIBE keyspaces;
+
+USE grupo34;
+
+CREATE TABLE tabla34 ( username text, age int);
+
+CREATE TABLE tabla34 ( username text PRIMARY KEY, age int);
+
+DESCRIBE tables;
+
+ALTER TABLE tabla34 ADD awake boolean;
+
+DROP TABLE tabla34;
+
+DROP KEYSPACE grupo34;
+
+# Moving to a common keyspace:
+
+USE cc5212;
+DESCRIBE tables;
+DESCRIBE TABLE students;
+SELECT * FROM students;
+
+## Insertion of a name and others:
+
+INSERT INTO students( username, name ) VALUES ( 'Espina', 'Jose' );
+
+INSERT INTO students( username, name ) VALUES ( 'Espina', true );
+
+DELETE name FROM students WHERE username = 'Espina';
+
+DELETE FROM students WHERE username = 'Espina';
+
+INSERT INTO students( username, name ) VALUES ('Espina', 'José Guillermo');
+
+INSERT INTO students(username,  awake, group, hobbies, message) VALUES ('Espina',True, 'grupo34', {'Musica', 'mimir'}, 'Viva el mate!');
+
+## Queries over the table:
+
+SELECT COUNT(*) AS scount FROM students;
+
+SELECT name FROM students WHERE username = 'Espina';
+
+SELECT name FROM students WHERE age = 22;
+
+## Creation of indexes and other queries:
+
+COPY students (username, name, age, group, hobbies, awake, message) TO 'grupo34.csv';
+
+CREATE TABLE tabla34csv ( username text PRIMARY KEY, name text, age int, group text, hobbies set<text>, awake boolean, message text);
+
+COPY tabla34csv (username, name, age, group, hobbies, awake, message) FROM 'grupo34.csv';
+
+CREATE INDEX ageIndex34 ON tabla34csv (age);
+
+SELECT name FROM tabla34csv WHERE age = 33;
+
+CREATE INDEX groupIndex34 ON tabla34csv (group);
+CREATE INDEX awakeIndex34 ON tabla34csv (awake);
+
+SELECT name FROM tabla34csv WHERE group = 'profe';
+SELECT name FROM tabla34csv WHERE age > 24 AND awake = true ALLOW FILTERING;
+
+## Queries without warnings:
+
+CREATE TABLE tabla34csv2 (username text, name text, age int, group text, hobbies set<text>, awake boolean, message text, PRIMARY KEY ((username), group, awake));
+
+COPY tabla34csv2 (username, name, age, group, hobbies, awake, message) FROM 'grupo34.csv';
+
+SELECT age FROM tabla34csv2 WHERE group = 'profe' AND username='ahogan';
+
+CREATE TABLE tabla34csv3 (username text, name text, age int, group text, hobbies set<text>, awake boolean, message text, PRIMARY KEY ((group), age, username));
+
+COPY tabla34csv3 (username, name, age, group, hobbies, awake, message) FROM 'grupo34.csv';
+
+SELECT name FROM tabla34csv3 WHERE group='profe';
+SELECT name FROM tabla34csv3 WHERE group='profe' AND age>20;
+SELECT name FROM tabla34csv3 WHERE group='profe' AND username='ahogan' AND age=33;
+
+## Pig + Cassandra
+
+CREATE TABLE testout34 (group text PRIMARY KEY, groupsize bigint);
+
+SELECT * FROM testout34;

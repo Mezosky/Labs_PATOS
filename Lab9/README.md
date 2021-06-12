@@ -1,3 +1,76 @@
+# Lab 9: Cassandra
+
+<p align="center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cassandra_logo.svg/1200px-Cassandra_logo.svg.png" alt="busquedaelasticada" height="300">
+</p>
+
+## Indice
+
+- [Objetivos](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#Objetivos)
+- [Entregables](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#entregables)
+- [Códigos](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#Codigos)
+- [Resultados](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#Resultados)
+- [Codigos utiles para la ejecución del Lab](https://github.com/Mezosky/Labs_PATOS/tree/main/Lab9#Codigos-utiles-para-la-ejecución-del-Lab)
+
+
+## Objetivos
+
+- [ ] Realizar múltiples consultas en Cassandra.
+- [ ] Contar el número de alumnos por grupos utilizando Apache Pig y Cassandra.
+
+## Entregables
+
+- Se deberan subir todas las consultas realizadas en Cassandra y el script de pig modificado.
+
+## Códigos
+
+A continuación se adjunta el codigo de pig apache:
+
+[`pig_cassandra.pig`]()
+
+Por otro lado en el siguiente archivo de texto son adjuntadas las consultas realizadas:
+
+[`Lab9.txt`]()
+
+## Resultados
+
+A continuación, son expuestos los resultados obtenidos utilizando las tecnologías Apache Pig y Cassandra:
+
+ group      | groupsize  
+|------------|-----------|
+|         46 |         3 |
+|   group 5  |         1 |
+|    group15 |         3
+|        G46 |         1
+|         43 |         1
+|         39 |         1
+|        G48 |         1
+|         19 |         1
+|         48 |         1
+|      profe |         3
+| lasdivinas |         1
+|         g8 |         1
+|          7 |         1
+|          9 |         1
+|        g44 |         1
+|         45 |         2
+|          3 |         1
+|    group11 |         3
+|         50 |         1
+|        G40 |         1
+|        G17 |         1
+|    Grupo 9 |         1
+|    grupo34 |         1
+|         12 |         1
+|         G2 |         1
+|  grupito19 |         1
+|    grupo 4 |         1
+|    grupo25 |         2
+|        G55 |         1
+|         41 |         1
+
+## Codigos utiles para la ejecución del cluster y otros
+
 - Conectar a servidor:
         
         ssh -p 220 uhadoop@cm.dcc.uchile.cl
@@ -6,50 +79,6 @@
 
         HADcc5212$oop
 
-cqlsh 10.10.10.1
-
-CREATE keyspace grupo34 with replication ={ 'class' : 'SimpleStrategy', 'replication_factor' : 3 };
-
-DESCRIBE keyspaces;
-
-USE grupo34;
-
-CREATE TABLE tabla34 ( username text, age int);
-
-CREATE TABLE tabla34 ( username text PRIMARY KEY, age int);
-
-DESCRIBE tables;
-
-ALTER TABLE tabla34 ADD awake boolean;
-
-DROP TABLE tabla34;
-DROP KEYSPACE grupo34;
-
-USE cc5212;
-DESCRIBE tables;
-DESCRIBE TABLE students;
-SELECT * FROM students;
-
-INSERT INTO students( username, name ) VALUES ( 'Espina', 'Jose' );
-
-INSERT INTO students( username, name ) VALUES ( 'Espina', true );
-
-DELETE name FROM students WHERE username = 'Espina';
-
-DELETE FROM students WHERE username = 'Espina';
-
-INSERT INTO students( username, name ) VALUES ('Espina', 'José Guillermo');
-
-INSERT INTO students(username,  awake, group, hobbies, message) VALUES ('Espina',True, 'grupo34', {'Musica', 'mimir'}, 'Viva el mate!');
-
-SELECT COUNT(*) AS scount FROM students;
-
-SELECT name FROM students WHERE username = 'Espina';
-
-SELECT name FROM students WHERE age = 22;
-
-COPY students (username, name, age, group, hobbies, awake, message) TO 'grupo34.csv';
-
-CREATE TABLE tabla34csv ( username text PRIMARY KEY, , name text, age int, group text, hobbies set<text>, awake boolean, message text);
-
-COPY tabla34csv (username, name, age, group, hobbies, awake, message) FROM 'grupo34.csv';
+- Inicializar Cassandra:
+        
+        cqlsh 10.10.10.1
